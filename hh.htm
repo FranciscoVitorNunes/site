@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVerse - Catálogo de Filmes, Séries e Animes</title>
+  <link rel="stylesheet" href="details.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Cine<span>Verse</span></div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+<section class="hero-slider">
+
+  <div class="slide active" style="background-image: url('https://image.tmdb.org/t/p/original/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg');">
+    <div class="hero-info">
+      <h1>Deadpool & Wolverine</h1>
+      <p>A aventura mais insana da Marvel</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image: url('https://image.tmdb.org/t/p/original/mFnF8TPvP7VQw3wqb0kkiQ3LDeU.jpg');">
+    <div class="hero-info">
+      <h1>Demon Slayer</h1>
+      <p>Lute contra as forças das trevas</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image: url('https://image.tmdb.org/t/p/original/44immBwzhDVyjn87b3x3l9mlhAD.jpg');">
+    <div class="hero-info">
+      <h1>Stranger Things</h1>
+      <p>O mundo invertido está te esperando</p>
+    </div>
+  </div>
+
+  <button id="prev" class="slider-btn">&#10094;</button>
+  <button id="next" class="slider-btn">&#10095;</button>
+</section>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Explore o universo do entretenimento</h1>
+      <p>Filmes, séries e animes selecionados especialmente para você.</p>
+      <a href="#catalogo" class="btn">Ver Catálogo</a>
+    </div>
+  </section>
+
+  <!-- APRESENTAÇÃO -->
+  <section id="sobre" class="sobre">
+    <h2>Sobre o Projeto</h2>
+    <p>Bem-vindo ao CineVerse, um catálogo moderno com os melhores filmes, séries e animes.</p>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section id="catalogo" class="catalogo">
+    <h2>Catálogo</h2>
+    <div class="grid">
+        <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg" alt="Deadpool">
+        <div class="card-info">
+            <h3>Deadpool e Wolverine</h3>
+            <p>Ação • 2024</p>
+        </div>
+        </div>
+
+        <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500/mFnF8TPvP7VQw3wqb0kkiQ3LDeU.jpg" alt="Demon Slayer">
+        <div class="card-info">
+            <h3>Demon Slayer</h3>
+            <p>Anime • 2019</p>
+        </div>
+        </div>
+
+        <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500/44immBwzhDVyjn87b3x3l9mlhAD.jpg" alt="Stranger Things">
+        <div class="card-info">
+            <h3>Stranger Things</h3>
+            <p>Série • 2016</p>
+        </div>
+        </div>
+
+        <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg" alt="Your Name">
+        <div class="card-info">
+            <h3>Your Name</h3>
+            <p>Romance • 2016</p>
+        </div>
+        </div>
+
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contato">
+    <h2>Contato</h2>
+    <form id="form-contato">
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu e-mail" required>
+      <textarea placeholder="Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 CineVerse — Todos os direitos reservados.</p>
+  </footer>
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <img id="modal-img" class="modal-banner">
+
+    <h2 id="modal-title"></h2>
+
+    <p id="modal-desc"></p>
+
+    <iframe 
+      id="modal-trailer"
+      width="100%" 
+      height="315" 
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
+

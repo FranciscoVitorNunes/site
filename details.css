@@ -1,0 +1,294 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0d0d0f;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #8c52ff;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #eee;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.navbar a:hover {
+  color: #8c52ff;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient( rgba(0,0,0,0.7), rgba(0,0,0,0.7) ), 
+              url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4") center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: #8c52ff;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #6b3ed3;
+}
+
+/* SEÇÕES */
+section {
+  padding: 80px 50px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  border-left: 4px solid #8c52ff;
+  padding-left: 10px;
+}
+
+/* CATÁLOGO */
+.catalogo .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+/* CONTATO */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+form input, form textarea {
+  padding: 12px;
+  background: #1b1b1e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #fff;
+}
+
+form button {
+  padding: 12px;
+  background: #8c52ff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+form button:hover {
+  background: #6b3ed3;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #0b0b0d;
+  color: #777;
+}
+/* CARD */
+.card {
+  background: #1a1a1d;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+/* Informação dentro do card */
+.card-info {
+  padding: 15px;
+}
+
+.card-info h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.card-info p {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* HOVER ANIMADO */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(140, 82, 255, 0.4);
+}
+
+.card:hover img {
+  transform: scale(1.15);
+}
+
+/* ANIMAÇÃO DE APARIÇÃO */
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp .7s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1e1f22;
+  width: 90%;
+  max-width: 750px;
+  padding: 20px;
+  border-radius: 14px;
+  color: #fff;
+  animation: modalShow .4s ease forwards;
+}
+
+@keyframes modalShow {
+  from { opacity: 0; transform: scale(.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.close {
+  float: right;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-banner {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+/* ===== HERO SLIDER ===== */
+.hero-slider {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.hero-info {
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  color: #fff;
+}
+
+.hero-info h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#prev { left: 20px; }
+#next { right: 20px; }
+
+.slider-btn:hover {
+  background: rgba(255,255,255,0.4);
+}
